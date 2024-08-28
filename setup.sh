@@ -1,4 +1,6 @@
 #!/bin/bash
+apt-get update
+apt-get install -y libsndfile1-dev ffmpeg enchant libenchant1c2a libenchant-dev
 
 set -e  # Exit immediately if a command exits with a non-zero status
 
@@ -73,9 +75,6 @@ download_and_unzip "$ENGLISH_CHECKPOINT_URL"
 update_config_json "gu/fastpitch/config.json" "gu/fastpitch/speaker.pth"
 update_config_json "en/fastpitch/config.json" "en/fastpitch/speaker.pth"
 
-# Install system dependencies
-apt-get update
-apt-get install -y libsndfile1-dev ffmpeg enchant libenchant1c2a libenchant-dev
 
 # Install PyTorch
 install_python_packages -U torch torchvision torchaudio
