@@ -150,7 +150,7 @@ def translate():
             "--vocoder_path", "/Users/prasanth/PycharmProjects/APITTS/gu/hifigan/best_model.pth",
             "--vocoder_config_path", "/Users/prasanth/PycharmProjects/APITTS/gu/hifigan/config.json",
             "--out_path", "outputguj.wav",
-            "--speaker_idx", "male"
+            "--speaker_idx", "female"
         ], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         gujarati_stdout, gujarati_stderr = gujarati_process.communicate()
         if gujarati_process.returncode != 0:
@@ -174,4 +174,4 @@ def translate():
 
 if __name__ == '__main__':
     os.environ["TOKENIZERS_PARALLELISM"] = "false"
-    app.run(host='0.0.0.0', port=4992)
+    app.run(host='0.0.0.0', port=8080)
